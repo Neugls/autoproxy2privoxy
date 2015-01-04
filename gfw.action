@@ -1,10 +1,14 @@
-{+forward-override{forward-socks5 127.0.0.1:7127 .}}
-# Checksum: oqEUWmQs1p6JcE0b4+LMYA
-# Checksum:
-# Expires: 6h
-# Last Modified: Thu, 23 Feb 2012 21:21:16 +0800
-#     ----http://autoproxy-gfwlist.googlecode.com/
-#--------------------Num----------------------------
+{{alias}}
+direct      = +forward-override{forward .}
+overGFW     = +forward-override{forward-socks5 127.0.0.1:8026 .}
+default     = direct
+#==========默认代理==========
+{default}
+/
+#==========直接连接==========
+{direct} 
+/
+{overGFW}
 .*.0rz.tw*.:80
 :80/.*\.0rz\.tw
 0rz.tw:80
@@ -1320,6 +1324,7 @@ gaopi.net:80
 :80/.*docs\.google\.com.*dgtbmwd6_934gg99v6g4cc
 .*docs.google.com:80/View\?id=dhh5gtxb_145nsxgctcc
 :80/.*docs\.google\.com/View\?id=dhh5gtxb_145nsxgctcc
+*.google.com
 #-------------Google ghs-----
 #-||www.20thingsilearned.com
 #-||www.3dtin.com
